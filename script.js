@@ -296,5 +296,11 @@ generateBtn.addEventListener('click', function() {
 
 
 });
+
+// todo: 
+  // run the script to filter based on global letter variable statuses
+  // print the recommended word to the page
+  // render an element to the page for each word in the results array
+  // reset all tiles' textContent, classes, data- attributes, as well as the global variables when the reset button is clicked
   
 
