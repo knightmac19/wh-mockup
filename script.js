@@ -1,5 +1,5 @@
 
-
+var generateBtn = document.querySelector('.generate-btn');
 
 var currentActiveCell = 1;
 var initialActiveCell = 1;
@@ -75,7 +75,7 @@ tiles.forEach(tile => {
     } 
   
   });
-})
+});
 
 
 
@@ -83,7 +83,7 @@ document.addEventListener('keydown', function(e) {
   let letters = 'abcdefghijklmnopqrstuvwxyz';
   let currentTile = document.querySelector(`[data-id="${currentActiveCell}"]`);
 
-  console.log(currentActiveCell);
+  // console.log(currentActiveCell);
   
   // only allow text to be added for the current row
   if (!currentTile.parentNode.classList.contains(currentActiveRow)) {
@@ -108,13 +108,43 @@ document.addEventListener('keydown', function(e) {
     }
   }
 
-  if (currentActiveCell > 5) {
-    currentActiveCell = 5;
+  if (currentActiveCell > initialActiveCell + 4) {
+    currentActiveCell = initialActiveCell + 4;
   }
   
-  
+});
 
-  
+const updateActiveRow = () => {
+  if (currentActiveRow === "row-one") {
+    currentActiveRow = "row-two";
+    currentActiveCell = 6;
+    initialActiveCell = 6;
+  } else if (currentActiveRow === "row-two") {
+    currentActiveRow = "row-three";
+    currentActiveCell = 11;
+    initialActiveCell = 11;
+  } else if (currentActiveRow === "row-three") {
+    currentActiveRow = "row-four";
+    currentActiveCell = 16;
+    initialActiveCell = 16;
+  } else if (currentActiveRow === "row-four") {
+    currentActiveRow = "row-five";
+    currentActiveCell = 21;
+    initialActiveCell = 21;
+  } else {
+    currentActiveRow = "row-six";
+    currentActiveCell = 26;
+    initialActiveCell = 26;
+  }
+}
+
+generateBtn.addEventListener('click', function() {
+  // console.log('generate btn clicked!')
+
+  updateActiveRow();
+  // console.log('active row ' + currentActiveRow)
+
+
 });
   
 
