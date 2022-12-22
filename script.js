@@ -151,8 +151,19 @@ resetBtn.addEventListener('click', function() {
   resetBtn.classList.add('hide');
 });
 
+// const setThisTilesProperties = tile => {
+
+// }
+
 generateBtn.addEventListener('click', function() {
   // console.log('generate btn clicked!')
+  let tileOne = document.querySelector(`[data-id="${currentActiveCell - 4}"]`).textContent;
+  let tileTwo = document.querySelector(`[data-id="${currentActiveCell - 3}"]`).textContent;
+  let tileThree = document.querySelector(`[data-id="${currentActiveCell - 2}"]`).textContent;
+  let tileFour = document.querySelector(`[data-id="${currentActiveCell - 1}"]`).textContent;
+  let tileFive = document.querySelector(`[data-id="${currentActiveCell}"]`).textContent;
+
+  console.log(` ${tileOne} ${tileTwo} ${tileThree} ${tileFour} ${tileFive} `)
 
   updateActiveRow();
   // console.log('active row ' + currentActiveRow)
