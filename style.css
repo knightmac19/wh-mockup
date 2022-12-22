@@ -9,3 +9,15 @@ body {
   font-family: sans-serif;
   line-height: 1.4;
 }
+
+.header {
+  display: flex;
+  justify-content: center;
+  border-bottom: black solid 2px;
+  padding: 10px 0px 15px 0px;
+  margin-bottom: 40px;
+}
+
+.emphasize {
+  text-decoration: underline dotted;
+}
