@@ -6,6 +6,21 @@ var currentActiveCell = 1;
 var initialActiveCell = 1;
 var currentActiveRow = "row-one";
 
+var firstMustBe = '';
+var secondMustBe = '';
+var thirdMustBe = '';
+var fourthMustBe = '';
+var fifthMustBe = '';
+
+var lettersThatCantBeUsed = '';
+var mustBeUsed = '';
+  
+var positionOneCantBe = '';
+var positionTwoCantBe = '';
+var positionThreeCantBe = '';
+var positionFourCantBe = '';
+var positionFiveCantBe = '';
+
 // Todos:
   // set conditional where if currentActiveCell === initialActiveCell + 5, 
   // THEN set currentActiveCell to be initialActiveCell + 4
@@ -59,11 +74,13 @@ tiles.forEach(tile => {
     
     if (absolute == 'true' && necessary == 'false' && verboten == 'false') {
       el.setAttribute('data-necessary', 'true');
+      el.classList.remove('right-letter-right-pos');
       el.classList.add('right-letter-wrong-pos');
     } 
   
     if (absolute == 'true' && necessary == 'true' && verboten == 'false') {
       el.setAttribute('data-verboten', 'true');
+      el.classList.remove('right-letter-wrong-pos');
       el.classList.add('wrong-letter');
     } 
   
@@ -151,19 +168,128 @@ resetBtn.addEventListener('click', function() {
   resetBtn.classList.add('hide');
 });
 
-// const setThisTilesProperties = tile => {
+const setTileProperties = offsetFromLast => {
+  let tile = document.querySelector(`[data-id="${currentActiveCell - offsetFromLast}"]`);
 
-// }
+  let letter = tile.textContent;
+
+  if (offsetFromLast == 4) {
+    if (tile.classList.contains('right-letter-right-pos')) {
+      firstMustBe = letter;
+      mustBeUsed += letter;
+    }
+    
+    if (tile.classList.contains('right-letter-wrong-pos')) {
+      mustBeUsed += letter;
+      positionOneCantBe += letter;
+    }
+
+    if (tile.classList.contains('wrong-letter')) {
+      lettersThatCantBeUsed += letter;
+    }
+  } else if (offsetFromLast == 3) {
+    if (tile.classList.contains('right-letter-right-pos')) {
+      secondMustBe = letter;
+      mustBeUsed += letter;
+    }
+    
+    if (tile.classList.contains('right-letter-wrong-pos')) {
+      mustBeUsed += letter;
+      positionTwoCantBe += letter;
+    }
+
+    if (tile.classList.contains('wrong-letter')) {
+      lettersThatCantBeUsed += letter;
+    }
+  } else if (offsetFromLast == 2) {
+    if (tile.classList.contains('right-letter-right-pos')) {
+      thirdMustBe = letter;
+      mustBeUsed += letter;
+    }
+    
+    if (tile.classList.contains('right-letter-wrong-pos')) {
+      mustBeUsed += letter;
+      positionThreeCantBe += letter;
+    }
+
+    if (tile.classList.contains('wrong-letter')) {
+      lettersThatCantBeUsed += letter;
+    }
+
+  } else if (offsetFromLast == 1) {
+    if (tile.classList.contains('right-letter-right-pos')) {
+      fourthMustBe = letter;
+      mustBeUsed += letter;
+    }
+    
+    if (tile.classList.contains('right-letter-wrong-pos')) {
+      mustBeUsed += letter;
+      positionFourCantBe += letter;
+    }
+
+    if (tile.classList.contains('wrong-letter')) {
+      lettersThatCantBeUsed += letter;
+    }
+  } else {
+    if (tile.classList.contains('right-letter-right-pos')) {
+      fifthMustBe = letter;
+      mustBeUsed += letter;
+    }
+    
+    if (tile.classList.contains('right-letter-wrong-pos')) {
+      mustBeUsed += letter;
+      positionFiveCantBe += letter;
+    }
+
+    if (tile.classList.contains('wrong-letter')) {
+      lettersThatCantBeUsed += letter;
+    }
+  }
+
+  // console.log(`
+  // firstMustBe = ${firstMustBe} \n
+  // secondMustBe = ${secondMustBe} \n
+  // thirdMustBe = ${thirdMustBe} \n
+  // fourthMustBe = ${fourthMustBe} \n
+  // fifthMustBe = ${fifthMustBe} \n
+
+  // lettersThatCantBeUsed = ${lettersThatCantBeUsed} \n
+  // mustBeUsed = ${mustBeUsed} \n
+  
+  // positionOneCantBe = ${positionOneCantBe} \n
+  // positionTwoCantBe = ${positionTwoCantBe} \n
+  // positionThreeCantBe = ${positionThreeCantBe} \n
+  // positionFourCantBe = ${positionFourCantBe} \n
+  // positionFiveCantBe = ${positionFiveCantBe}`
+  // );
+}
 
 generateBtn.addEventListener('click', function() {
   // console.log('generate btn clicked!')
-  let tileOne = document.querySelector(`[data-id="${currentActiveCell - 4}"]`).textContent;
-  let tileTwo = document.querySelector(`[data-id="${currentActiveCell - 3}"]`).textContent;
-  let tileThree = document.querySelector(`[data-id="${currentActiveCell - 2}"]`).textContent;
-  let tileFour = document.querySelector(`[data-id="${currentActiveCell - 1}"]`).textContent;
-  let tileFive = document.querySelector(`[data-id="${currentActiveCell}"]`).textContent;
+  
 
-  console.log(` ${tileOne} ${tileTwo} ${tileThree} ${tileFour} ${tileFive} `)
+  setTileProperties(4);
+  setTileProperties(3);
+  setTileProperties(2);
+  setTileProperties(1);
+  setTileProperties(0);
+
+  console.log(`
+  firstMustBe = ${firstMustBe} \n
+  secondMustBe = ${secondMustBe} \n
+  thirdMustBe = ${thirdMustBe} \n
+  fourthMustBe = ${fourthMustBe} \n
+  fifthMustBe = ${fifthMustBe} \n
+
+  lettersThatCantBeUsed = ${lettersThatCantBeUsed} \n
+  mustBeUsed = ${mustBeUsed} \n
+  
+  positionOneCantBe = ${positionOneCantBe} \n
+  positionTwoCantBe = ${positionTwoCantBe} \n
+  positionThreeCantBe = ${positionThreeCantBe} \n
+  positionFourCantBe = ${positionFourCantBe} \n
+  positionFiveCantBe = ${positionFiveCantBe}`
+  );
 
   updateActiveRow();
   // console.log('active row ' + currentActiveRow)
