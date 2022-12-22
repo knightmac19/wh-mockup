@@ -57,23 +57,6 @@ var initialActiveCell = 1;
       // append an element to the page for each word in the results array
       // include the recommended word up top
 
-  // add CSS classes for:
-    // correct position + correct letter
-    // incorrect position + correct letter
-    // incorrect position + incorrect letter (lettersThatCantBeUsed)
-  
-  // include 'data-absolute', 'data-necessary' and 'data-verboten' values
-  // add event listener for the 'tile' class =>
-    // if !data-absolute && !data-necessary && !data-verboten => 
-      // data-absolute=true
-      // add styling class for correct position + correct letter
-      // else if !data-necessary && !data-verboten =>
-        // data-necessary=true
-        // add styling class for incorrect position + correct letter
-      // else =>
-        // data-verboten=true
-        // add styling class for incorrect position + incorrect letter (lettersThatCantBeUsed)
-
   // create variables for 
     // var firstMustBe = '';
     // var secondMustBe = '';
@@ -94,19 +77,12 @@ const tiles = document.querySelectorAll('.tile');
 
 tiles.forEach(tile => {
   tile.addEventListener('click', function(e) {
-    console.log('you\'ve clicked a tile! \n');
     
     let el = e.target
   
     let absolute = el.getAttribute('data-absolute');
     let necessary = el.getAttribute('data-necessary');
     let verboten = el.getAttribute('data-verboten');
-    
-    el.getAttribute('data-absolute');
-  
-    console.log(absolute);
-    console.log(necessary);
-    console.log(verboten);
   
     if (absolute == 'false' && necessary == 'false' && verboten == 'false') {
       el.setAttribute('data-absolute', 'true');
@@ -131,7 +107,6 @@ tiles.forEach(tile => {
       el.classList.remove('right-letter-right-pos', 'right-letter-wrong-pos', 'wrong-letter');
     } 
   
-    console.log(el)
   });
 })
 
