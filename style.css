@@ -54,6 +54,19 @@ body {
   background-color: darkslategray;
 }
 
+.right-letter-right-pos {
+  background-color: rgb(140, 192, 140);
+}
+
+.right-letter-wrong-pos {
+  background-color: rgb(216, 216, 111);
+}
+
+.wrong-letter {
+  background-color: grey;
+  color: black;
+}
+
 .footer {
   display: flex;
   justify-content: center;
