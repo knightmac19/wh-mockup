@@ -94,6 +94,10 @@ document.addEventListener('keydown', function(e) {
   } else {
     
     if (e.key === "Backspace") {
+      if (currentActiveCell == 1) {
+        currentTile.textContent="";
+        return;
+      } 
       currentActiveCell--;
       currentTile.textContent="";
     } else if (!letters.includes(e.key)) {
