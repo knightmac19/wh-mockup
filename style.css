@@ -20,6 +20,7 @@ body {
 
 .emphasize {
   text-decoration: underline dotted;
+  font-family: serif;  
 }
 
 .main {
