@@ -176,7 +176,9 @@ const setTileProperties = offsetFromLast => {
   if (offsetFromLast == 4) {
     if (tile.classList.contains('right-letter-right-pos')) {
       firstMustBe = letter;
-      mustBeUsed += letter;
+      if (!mustBeUsed.includes(letter)) {
+        mustBeUsed += letter;
+      }
     }
     
     if (tile.classList.contains('right-letter-wrong-pos')) {
@@ -190,7 +192,9 @@ const setTileProperties = offsetFromLast => {
   } else if (offsetFromLast == 3) {
     if (tile.classList.contains('right-letter-right-pos')) {
       secondMustBe = letter;
-      mustBeUsed += letter;
+      if (!mustBeUsed.includes(letter)) {
+        mustBeUsed += letter;
+      }
     }
     
     if (tile.classList.contains('right-letter-wrong-pos')) {
@@ -204,7 +208,9 @@ const setTileProperties = offsetFromLast => {
   } else if (offsetFromLast == 2) {
     if (tile.classList.contains('right-letter-right-pos')) {
       thirdMustBe = letter;
-      mustBeUsed += letter;
+      if (!mustBeUsed.includes(letter)) {
+        mustBeUsed += letter;
+      }
     }
     
     if (tile.classList.contains('right-letter-wrong-pos')) {
@@ -219,7 +225,9 @@ const setTileProperties = offsetFromLast => {
   } else if (offsetFromLast == 1) {
     if (tile.classList.contains('right-letter-right-pos')) {
       fourthMustBe = letter;
-      mustBeUsed += letter;
+      if (!mustBeUsed.includes(letter)) {
+        mustBeUsed += letter;
+      }
     }
     
     if (tile.classList.contains('right-letter-wrong-pos')) {
@@ -233,7 +241,9 @@ const setTileProperties = offsetFromLast => {
   } else {
     if (tile.classList.contains('right-letter-right-pos')) {
       fifthMustBe = letter;
-      mustBeUsed += letter;
+      if (!mustBeUsed.includes(letter)) {
+        mustBeUsed += letter;
+      }
     }
     
     if (tile.classList.contains('right-letter-wrong-pos')) {
@@ -301,6 +311,7 @@ generateBtn.addEventListener('click', function() {
   // run the script to filter based on global letter variable statuses
   // print the recommended word to the page
   // render an element to the page for each word in the results array
-  // reset all tiles' textContent, classes, data- attributes, as well as the global variables when the reset button is clicked
+  // reset all tiles' textContent, classes, data- attributes, 
+  // ...as well as the global variables when the reset button is clicked
   
 
