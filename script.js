@@ -1,5 +1,6 @@
 
 var generateBtn = document.querySelector('.generate-btn');
+var resetBtn = document.querySelector('.reset-btn');
 
 var currentActiveCell = 1;
 var initialActiveCell = 1;
@@ -135,12 +136,20 @@ const updateActiveRow = () => {
     currentActiveRow = "row-five";
     currentActiveCell = 21;
     initialActiveCell = 21;
-  } else {
+  } else if (currentActiveRow === "row-five") {
     currentActiveRow = "row-six";
     currentActiveCell = 26;
     initialActiveCell = 26;
+  } else {
+    generateBtn.classList.add('hide');
+    resetBtn.classList.remove('hide');
   }
 }
+
+resetBtn.addEventListener('click', function() {
+  generateBtn.classList.remove('hide');
+  resetBtn.classList.add('hide');
+});
 
 generateBtn.addEventListener('click', function() {
   // console.log('generate btn clicked!')

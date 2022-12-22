@@ -73,7 +73,7 @@ body {
   justify-content: center;
 }
 
-.generate-btn {
+.generate-btn, .reset-btn {
   background-color: #000;
   border: none;
   color: whitesmoke;
@@ -86,7 +86,16 @@ body {
   max-width: 300px;
 }
 
+.hide {
+  display: none;
+}
+
 .generate-btn:hover {
+  color: whitesmoke;
+  background-color: darkslategray;
+}
+
+.reset-btn:hover {
   color: whitesmoke;
   background-color: darkslategray;
 }
