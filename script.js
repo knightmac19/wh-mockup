@@ -50,46 +50,19 @@ document.addEventListener('keydown', function(e) {
   // console.log(`this is now ${thisIsTrue}`);
   let letters = 'abcdefghijklmnopqrstuvwxyz';
 
-  
-  if (!letters.includes(e.key)) {
+  // allow users to backspace something
+  if (e.key === "Backspace") {
+    currentActiveCell--;
+    document.querySelector(`[data-id="${currentActiveCell}"]`).textContent="";
+  } else if (!letters.includes(e.key)) {
 
     console.log('invalid key!');
     return;
   } else {
     
-    document.querySelector(`[data-id="${currentActiveCell}" ]`).textContent=e.key.toUpperCase();
-        // set second row active
+    document.querySelector(`[data-id="${currentActiveCell}"]`).textContent=e.key.toUpperCase();
     currentActiveCell++
 
-      // if(activeRows[0].active) {
-      //   document.querySelector(`${currentActiveCell}`).textContent=e.key.toUpperCase();
-      //   // set second row active
-      //   currentActiveCell++
-      //   // setActiveRow(1, activeRows);
-        
-      // } else if(activeRows[1].active) {
-        
-      //   // set third row active
-      //   setActiveRow(2, activeRows);
-        
-      // } else if(activeRows[2].active) {
-        
-      //   // set fourth row active
-      //   setActiveRow(3, activeRows);
-        
-      // } else if(activeRows[3].active) {
-        
-      //   // set fifth row active
-      //   setActiveRow(4, activeRows);
-        
-      // } else if(activeRows[4].active) {
-        
-      //   // set sixth row active
-      //   setActiveRow(5, activeRows);
-        
-      // } else {
-        
-      // }
     }
 });
   
