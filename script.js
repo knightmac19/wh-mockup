@@ -1,42 +1,9 @@
 
 
-var activeRows = [
-  {
-    active: true
-  },
-  {
-    active: false
-  },
-  {
-    active: false
-  },
-  {
-    active: false
-  },
-  {
-    active: false
-  },
-  {
-    active: false
-  }
-];
-
-const setActiveRow = (indexToBeActive, arr) => {
-  
-  for(var i = 0; i < arr.length; i++) {
-    if (arr[i] == indexToBeActive) {
-      arr[i].active = true;
-    } else {
-      arr[i].active = false;
-    }
-    
-  }
-
-  return arr;
-}
 
 var currentActiveCell = 1;
 var initialActiveCell = 1;
+var currentActiveRow = "row-one";
 
 // Todos:
   // set conditional where if currentActiveCell === initialActiveCell + 5, 
@@ -113,25 +80,41 @@ tiles.forEach(tile => {
 
 
 document.addEventListener('keydown', function(e) {
-  
-  
-  // console.log(`this is now ${thisIsTrue}`);
   let letters = 'abcdefghijklmnopqrstuvwxyz';
+  let currentTile = document.querySelector(`[data-id="${currentActiveCell}"]`);
 
-  // allow users to backspace something
-  if (e.key === "Backspace") {
-    currentActiveCell--;
-    document.querySelector(`[data-id="${currentActiveCell}"]`).textContent="";
-  } else if (!letters.includes(e.key)) {
-
-    console.log('invalid key!');
+  console.log(currentActiveCell);
+  
+  // only allow text to be added for the current row
+  if (!currentTile.parentNode.classList.contains(currentActiveRow)) {
+    console.log(currentActiveRow + '\n');
+    console.log(currentTile);
     return;
+
   } else {
     
-    document.querySelector(`[data-id="${currentActiveCell}"]`).textContent=e.key.toUpperCase();
-    currentActiveCell++
-
+    if (e.key === "Backspace") {
+      currentActiveCell--;
+      currentTile.textContent="";
+    } else if (!letters.includes(e.key)) {
+  
+      console.log('invalid key!');
+      return;
+    } else {
+      
+      currentTile.textContent=e.key.toUpperCase();
+      currentActiveCell++
+  
     }
+  }
+
+  if (currentActiveCell > 5) {
+    currentActiveCell = 5;
+  }
+  
+  
+
+  
 });
   
 
