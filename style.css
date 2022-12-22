@@ -21,3 +21,14 @@ body {
 .emphasize {
   text-decoration: underline dotted;
 }
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: whitesmoke;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+}
