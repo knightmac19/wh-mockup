@@ -90,6 +90,53 @@ var initialActiveCell = 1;
     // var positionFourCantBe = '';
     // var positionFiveCantBe = '';
 
+const tiles = document.querySelectorAll('.tile');
+
+tiles.forEach(tile => {
+  tile.addEventListener('click', function(e) {
+    console.log('you\'ve clicked a tile! \n');
+    
+    let el = e.target
+  
+    let absolute = el.getAttribute('data-absolute');
+    let necessary = el.getAttribute('data-necessary');
+    let verboten = el.getAttribute('data-verboten');
+    
+    el.getAttribute('data-absolute');
+  
+    console.log(absolute);
+    console.log(necessary);
+    console.log(verboten);
+  
+    if (absolute == 'false' && necessary == 'false' && verboten == 'false') {
+      el.setAttribute('data-absolute', 'true');
+      el.classList.add('right-letter-right-pos');
+    } 
+    
+    if (absolute == 'true' && necessary == 'false' && verboten == 'false') {
+      el.setAttribute('data-necessary', 'true');
+      el.classList.add('right-letter-wrong-pos');
+    } 
+  
+    if (absolute == 'true' && necessary == 'true' && verboten == 'false') {
+      el.setAttribute('data-verboten', 'true');
+      el.classList.add('wrong-letter');
+    } 
+  
+    if (absolute == 'true' && necessary == 'true' && verboten == 'true') {
+      
+      el.setAttribute('data-absolute', 'false');
+      el.setAttribute('data-necessary', 'false');
+      el.setAttribute('data-verboten', 'false');
+      el.classList.remove('right-letter-right-pos', 'right-letter-wrong-pos', 'wrong-letter');
+    } 
+  
+    console.log(el)
+  });
+})
+
+
+
 document.addEventListener('keydown', function(e) {
   
   
