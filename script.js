@@ -1,4 +1,6 @@
 
+
+
 var generateBtn = document.querySelector('.generate-btn');
 var resetBtn = document.querySelector('.reset-btn');
 
@@ -23,61 +25,29 @@ var positionThreeCantBe = '';
 var positionFourCantBe = '';
 var positionFiveCantBe = '';
 
-// letters that CAN'T be used
-const cantBeUsedArray = lettersThatCantBeUsed.split('');
+// // letters that CAN'T be used
+// const cantBeUsedArray = lettersThatCantBeUsed.split('');
 
-// letters that MUST be used
-const mustBeUsedArray = mustBeUsed.split('');
+// // letters that MUST be used
+// const mustBeUsedArray = mustBeUsed.split('');
 
-// letters that can't be position One
-const positionOneCantBeArray = positionOneCantBe.split('');
+// // letters that can't be position One
+// const positionOneCantBeArray = positionOneCantBe.split('');
 
-// letters that can't be position Two
-const positionTwoCantBeArray = positionTwoCantBe.split('');
+// // letters that can't be position Two
+// const positionTwoCantBeArray = positionTwoCantBe.split('');
 
-// letters that can't be position Three
-const positionThreeCantBeArray = positionThreeCantBe.split('');
+// // letters that can't be position Three
+// const positionThreeCantBeArray = positionThreeCantBe.split('');
 
-// letters that can't be position Four
-const positionFourCantBeArray = positionFourCantBe.split('');
+// // letters that can't be position Four
+// const positionFourCantBeArray = positionFourCantBe.split('');
 
-// letters that can't be position Five
-const positionFiveCantBeArray = positionFiveCantBe.split('');
+// // letters that can't be position Five
+// const positionFiveCantBeArray = positionFiveCantBe.split('');
 
-// Todos:
-  // set conditional where if currentActiveCell === initialActiveCell + 5, 
-  // THEN set currentActiveCell to be initialActiveCell + 4
 
-  // set the first row as active row
-  // add currentActiveRow variable set as an integer
   
-  // add conditional to only run the 'keydown' event listener for the current active row
-    // first check to see what the currentActiveRow is
-    // then set the currentActiveCell and initialActiveCell values accordingly 
-  
-  // add "Generate guesses" button
-    // when "Generate guesses" is fired --> 
-      // set the currentActiveRow
-      // set the necessary variables
-      // run all the calculations
-      // append an element to the page for each word in the results array
-      // include the recommended word up top
-
-  // create variables for 
-    // var firstMustBe = '';
-    // var secondMustBe = '';
-    // var thirdMustBe = '';
-    // var fourthMustBe = '';
-    // var fifthMustBe = '';
-
-    // var lettersThatCantBeUsed = '';
-    // var mustBeUsed = '';
-    
-    // var positionOneCantBe = '';
-    // var positionTwoCantBe = '';
-    // var positionThreeCantBe = '';
-    // var positionFourCantBe = '';
-    // var positionFiveCantBe = '';
 
 const tiles = document.querySelectorAll('.tile');
 
@@ -193,15 +163,15 @@ resetBtn.addEventListener('click', function() {
 
 const setTileProperties = offsetFromLast => {
   let tile = document.querySelector(`[data-id="${currentActiveCell - offsetFromLast}"]`);
+  let currentTileNumber = currentActiveCell - offsetFromLast;
 
   let letter = tile.textContent;
 
   if (offsetFromLast == 4) {
     if (tile.classList.contains('right-letter-right-pos')) {
       firstMustBe = letter;
-      if (!mustBeUsed.includes(letter)) {
-        mustBeUsed += letter;
-      }
+      mustBeUsed += letter;
+      
     }
     
     if (tile.classList.contains('right-letter-wrong-pos')) {
@@ -215,9 +185,8 @@ const setTileProperties = offsetFromLast => {
   } else if (offsetFromLast == 3) {
     if (tile.classList.contains('right-letter-right-pos')) {
       secondMustBe = letter;
-      if (!mustBeUsed.includes(letter)) {
-        mustBeUsed += letter;
-      }
+      mustBeUsed += letter;
+      
     }
     
     if (tile.classList.contains('right-letter-wrong-pos')) {
@@ -231,9 +200,8 @@ const setTileProperties = offsetFromLast => {
   } else if (offsetFromLast == 2) {
     if (tile.classList.contains('right-letter-right-pos')) {
       thirdMustBe = letter;
-      if (!mustBeUsed.includes(letter)) {
-        mustBeUsed += letter;
-      }
+      mustBeUsed += letter;
+      
     }
     
     if (tile.classList.contains('right-letter-wrong-pos')) {
@@ -248,9 +216,8 @@ const setTileProperties = offsetFromLast => {
   } else if (offsetFromLast == 1) {
     if (tile.classList.contains('right-letter-right-pos')) {
       fourthMustBe = letter;
-      if (!mustBeUsed.includes(letter)) {
-        mustBeUsed += letter;
-      }
+      mustBeUsed += letter;
+      
     }
     
     if (tile.classList.contains('right-letter-wrong-pos')) {
@@ -264,9 +231,8 @@ const setTileProperties = offsetFromLast => {
   } else {
     if (tile.classList.contains('right-letter-right-pos')) {
       fifthMustBe = letter;
-      if (!mustBeUsed.includes(letter)) {
-        mustBeUsed += letter;
-      }
+      mustBeUsed += letter;
+      
     }
     
     if (tile.classList.contains('right-letter-wrong-pos')) {
@@ -277,7 +243,10 @@ const setTileProperties = offsetFromLast => {
     if (tile.classList.contains('wrong-letter')) {
       lettersThatCantBeUsed += letter;
     }
+
+    
   }
+  console.log('tile properties for tile ' + currentTileNumber + ' is completed')
 
   // console.log(`
   // firstMustBe = ${firstMustBe} \n
@@ -297,7 +266,7 @@ const setTileProperties = offsetFromLast => {
   // );
 }
 
-generateBtn.addEventListener('click', function() {
+generateBtn.addEventListener('click',  function() {
   // console.log('generate btn clicked!')
   
 
@@ -323,6 +292,16 @@ generateBtn.addEventListener('click', function() {
   positionFourCantBe = ${positionFourCantBe} \n
   positionFiveCantBe = ${positionFiveCantBe}`
   );
+  // console.log(cantBeUsedArray)
+
+
+  
+
+  
+
+  let results = makeGuess();
+  console.log(results)
+  renderResultsToPage(results);
 
   updateActiveRow();
   // console.log('active row ' + currentActiveRow)
@@ -342,88 +321,11 @@ generateBtn.addEventListener('click', function() {
 
 
 
-const testArray = [
-'THESE',
-'AGAIN',
-'GREAT',
-'FOUND',
-'UNDER',
-'MIGHT',
-'THESE',
-'AGAIN',
-'GREAT',
-'FOUND',
-'UNDER',
-'MIGHT',
-'THESE',
-'THESE',
-'AGAIN',
-'GREAT',
-'FOUND',
-'UNDER',
-'MIGHT',
-'THESE',
-'AGAIN',
-'GREAT',
-'FOUND',
-'UNDER',
-'MIGHT',
-'THESE',
-'THESE',
-'AGAIN',
-'GREAT',
-'FOUND',
-'UNDER',
-'MIGHT',
-'THESE',
-'AGAIN',
-'GREAT',
-'FOUND',
-'UNDER',
-'MIGHT',
-'THESE',
-'THESE',
-'AGAIN',
-'GREAT',
-'FOUND',
-'UNDER',
-'MIGHT',
-'THESE',
-'AGAIN',
-'GREAT',
-'FOUND',
-'UNDER',
-'MIGHT',
-'THESE',
-'THESE',
-'AGAIN',
-'GREAT',
-'FOUND',
-'UNDER',
-'MIGHT',
-'THESE',
-'AGAIN',
-'GREAT',
-'FOUND',
-'UNDER',
-'MIGHT',
-'THESE',
-'THESE',
-'AGAIN',
-'GREAT',
-'FOUND',
-'UNDER',
-'MIGHT',
-'THESE',
-'AGAIN',
-'GREAT',
-'FOUND',
-'UNDER',
-'MIGHT',
-'THESE'
-]
+
 
 const renderResultsToPage = arr => {
+
+  
   for (var i = 0; i < arr.length; i++) {
     let span = document.createElement('span');
     span.classList.add('guess');
@@ -432,6 +334,8 @@ const renderResultsToPage = arr => {
 
   }
 }
+
+
 
 // renderResultsToPage(wordsArray);
 // console.log(makeGuess());
