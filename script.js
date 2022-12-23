@@ -2,6 +2,8 @@
 var generateBtn = document.querySelector('.generate-btn');
 var resetBtn = document.querySelector('.reset-btn');
 
+var resultsSection = document.querySelector('.results');
+
 var currentActiveCell = 1;
 var initialActiveCell = 1;
 var currentActiveRow = "row-one";
@@ -20,6 +22,27 @@ var positionTwoCantBe = '';
 var positionThreeCantBe = '';
 var positionFourCantBe = '';
 var positionFiveCantBe = '';
+
+// letters that CAN'T be used
+const cantBeUsedArray = lettersThatCantBeUsed.split('');
+
+// letters that MUST be used
+const mustBeUsedArray = mustBeUsed.split('');
+
+// letters that can't be position One
+const positionOneCantBeArray = positionOneCantBe.split('');
+
+// letters that can't be position Two
+const positionTwoCantBeArray = positionTwoCantBe.split('');
+
+// letters that can't be position Three
+const positionThreeCantBeArray = positionThreeCantBe.split('');
+
+// letters that can't be position Four
+const positionFourCantBeArray = positionFourCantBe.split('');
+
+// letters that can't be position Five
+const positionFiveCantBeArray = positionFiveCantBe.split('');
 
 // Todos:
   // set conditional where if currentActiveCell === initialActiveCell + 5, 
@@ -315,3 +338,101 @@ generateBtn.addEventListener('click', function() {
   // ...as well as the global variables when the reset button is clicked
   
 
+// console.log(thisIsLogic);
+
+
+
+const testArray = [
+'THESE',
+'AGAIN',
+'GREAT',
+'FOUND',
+'UNDER',
+'MIGHT',
+'THESE',
+'AGAIN',
+'GREAT',
+'FOUND',
+'UNDER',
+'MIGHT',
+'THESE',
+'THESE',
+'AGAIN',
+'GREAT',
+'FOUND',
+'UNDER',
+'MIGHT',
+'THESE',
+'AGAIN',
+'GREAT',
+'FOUND',
+'UNDER',
+'MIGHT',
+'THESE',
+'THESE',
+'AGAIN',
+'GREAT',
+'FOUND',
+'UNDER',
+'MIGHT',
+'THESE',
+'AGAIN',
+'GREAT',
+'FOUND',
+'UNDER',
+'MIGHT',
+'THESE',
+'THESE',
+'AGAIN',
+'GREAT',
+'FOUND',
+'UNDER',
+'MIGHT',
+'THESE',
+'AGAIN',
+'GREAT',
+'FOUND',
+'UNDER',
+'MIGHT',
+'THESE',
+'THESE',
+'AGAIN',
+'GREAT',
+'FOUND',
+'UNDER',
+'MIGHT',
+'THESE',
+'AGAIN',
+'GREAT',
+'FOUND',
+'UNDER',
+'MIGHT',
+'THESE',
+'THESE',
+'AGAIN',
+'GREAT',
+'FOUND',
+'UNDER',
+'MIGHT',
+'THESE',
+'AGAIN',
+'GREAT',
+'FOUND',
+'UNDER',
+'MIGHT',
+'THESE'
+]
+
+const renderResultsToPage = arr => {
+  for (var i = 0; i < arr.length; i++) {
+    let span = document.createElement('span');
+    span.classList.add('guess');
+    span.textContent = arr[i];
+    resultsSection.appendChild(span);
+
+  }
+}
+
+// renderResultsToPage(wordsArray)
+// console.log(makeGuess());
+// console.log(document.querySelector('.guess').textContent)
