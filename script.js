@@ -156,11 +156,6 @@ const updateActiveRow = () => {
   }
 }
 
-resetBtn.addEventListener('click', function() {
-  generateBtn.classList.remove('hide');
-  resetBtn.classList.add('hide');
-});
-
 const setTileProperties = offsetFromLast => {
   let tile = document.querySelector(`[data-id="${currentActiveCell - offsetFromLast}"]`);
 
@@ -291,7 +286,41 @@ const renderResultsToPage = arr => {
   }
 }
 
+const resetAll = () => {
+  tiles.forEach(tile => {
+      
+    tile.setAttribute('data-absolute', 'false');
+    tile.setAttribute('data-necessary', 'false');
+    tile.setAttribute('data-verboten', 'false');
+    tile.classList.remove('right-letter-right-pos', 'right-letter-wrong-pos', 'wrong-letter');
+    tile.textContent = "";
+    
+  });
+  firstMustBe = '';
+  secondMustBe = '';
+  thirdMustBe = '';
+  fourthMustBe = '';
+  fifthMustBe = '';
 
+  lettersThatCantBeUsed = '';
+  mustBeUsed = '';
+  
+  positionOneCantBe = '';
+  positionTwoCantBe = '';
+  positionThreeCantBe = '';
+  positionFourCantBe = '';
+  positionFiveCantBe = '';  
+
+  currentActiveCell = 1;
+  initialActiveCell = 1;
+  currentActiveRow = "row-one";
+
+  resultsSection.innerHTML = "";
+}
+
+resetBtn.addEventListener('click', function() {
+  resetAll();
+});
 
 // renderResultsToPage(wordsArray);
 
