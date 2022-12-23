@@ -21,10 +21,29 @@ body {
 
 .header {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   border-bottom: black solid 2px;
   padding: 10px 0px 15px 0px;
   /* margin-bottom: 10px; */
+}
+
+h1 {
+  align-self: center;
+}
+
+.reset-btn {
+  background-color: #000;
+  border: none;
+  color: whitesmoke;
+  font-size: 16px;
+  text-transform: uppercase;
+  cursor: pointer;
+  /* padding: 5px; */
+  width: 80px;
+  border-radius: 25px;
+  /* max-width: 300px; */
+  /* justify-content: flex-end; */
+  /* align-self: flex-end; */
 }
 
 .emphasize {
@@ -37,7 +56,7 @@ body {
   justify-content: center; */
   width: 90%;
   margin: 0 auto;
-  border: solid red 2px;
+  /* border: solid red 2px; */
 }
 
 .tile-grid {
@@ -83,7 +102,7 @@ body {
   margin-bottom: 30px;
 }
 
-.generate-btn, .reset-btn {
+.generate-btn {
   background-color: #000;
   border: none;
   color: whitesmoke;
@@ -95,6 +114,8 @@ body {
   border-radius: 25px;
   max-width: 300px;
 }
+
+
 
 .hide {
   display: none;
@@ -114,7 +135,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  border: 2px blueviolet solid;
+  /* border: 2px blueviolet solid; */
   gap: 7px;
   margin-bottom: 50px;
 }
