@@ -153,6 +153,7 @@ h1 {
   margin: 0 auto;
   gap: 4px;
   max-width: 600px;
+  margin-bottom: 30px;
   /* border: orange 2px solid; */
 }
 

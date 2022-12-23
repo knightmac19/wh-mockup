@@ -88,13 +88,59 @@ tiles.forEach(tile => {
   });
 });
 
+var keyboardKeys = document.querySelectorAll('.keyboard-key');
+// var backspaceKey = document.querySelector('.backspace');
+
+// backspaceKey.addEventListener('click', function(e) {
+//   console.log(e.target.textContent);
+// });
+
+keyboardKeys.forEach(key => {
+  key.addEventListener('click', function(e) {
+    console.log(e.target.textContent);
+
+    let letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    let currentTile = document.querySelector(`[data-id="${currentActiveCell}"]`);
+    
+    // only allow text to be added for the current row
+    if (!currentTile.parentNode.classList.contains(currentActiveRow)) {
+      
+      
+      return;
+
+    } else {
+      
+      if (e.target.textContent === "DEL") {
+        if (currentActiveCell == 1) {
+          currentTile.textContent="";
+          return;
+        }
+        currentActiveCell--;
+        currentTile.textContent="";
+      } else if (!letters.includes(e.target.textContent)) {
+    
+        
+        return;
+      } else {
+        
+        currentTile.textContent=e.target.textContent.toUpperCase();
+        currentActiveCell++
+    
+      }
+    }
+
+    if (currentActiveCell > initialActiveCell + 4) {
+      currentActiveCell = initialActiveCell + 4;
+    }
+  });
+});
+
+
 
 
 document.addEventListener('keydown', function(e) {
   let letters = 'abcdefghijklmnopqrstuvwxyz';
   let currentTile = document.querySelector(`[data-id="${currentActiveCell}"]`);
-
-  
   
   // only allow text to be added for the current row
   if (!currentTile.parentNode.classList.contains(currentActiveRow)) {
