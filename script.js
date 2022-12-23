@@ -94,12 +94,12 @@ document.addEventListener('keydown', function(e) {
   let letters = 'abcdefghijklmnopqrstuvwxyz';
   let currentTile = document.querySelector(`[data-id="${currentActiveCell}"]`);
 
-  // console.log(currentActiveCell);
+  
   
   // only allow text to be added for the current row
   if (!currentTile.parentNode.classList.contains(currentActiveRow)) {
-    console.log(currentActiveRow + '\n');
-    console.log(currentTile);
+    
+    
     return;
 
   } else {
@@ -113,7 +113,7 @@ document.addEventListener('keydown', function(e) {
       currentTile.textContent="";
     } else if (!letters.includes(e.key)) {
   
-      console.log('invalid key!');
+      
       return;
     } else {
       
@@ -163,7 +163,6 @@ resetBtn.addEventListener('click', function() {
 
 const setTileProperties = offsetFromLast => {
   let tile = document.querySelector(`[data-id="${currentActiveCell - offsetFromLast}"]`);
-  let currentTileNumber = currentActiveCell - offsetFromLast;
 
   let letter = tile.textContent;
 
@@ -246,28 +245,10 @@ const setTileProperties = offsetFromLast => {
 
     
   }
-  console.log('tile properties for tile ' + currentTileNumber + ' is completed')
-
-  // console.log(`
-  // firstMustBe = ${firstMustBe} \n
-  // secondMustBe = ${secondMustBe} \n
-  // thirdMustBe = ${thirdMustBe} \n
-  // fourthMustBe = ${fourthMustBe} \n
-  // fifthMustBe = ${fifthMustBe} \n
-
-  // lettersThatCantBeUsed = ${lettersThatCantBeUsed} \n
-  // mustBeUsed = ${mustBeUsed} \n
   
-  // positionOneCantBe = ${positionOneCantBe} \n
-  // positionTwoCantBe = ${positionTwoCantBe} \n
-  // positionThreeCantBe = ${positionThreeCantBe} \n
-  // positionFourCantBe = ${positionFourCantBe} \n
-  // positionFiveCantBe = ${positionFiveCantBe}`
-  // );
 }
 
 generateBtn.addEventListener('click',  function() {
-  // console.log('generate btn clicked!')
   
 
   setTileProperties(4);
@@ -276,37 +257,12 @@ generateBtn.addEventListener('click',  function() {
   setTileProperties(1);
   setTileProperties(0);
 
-  console.log(`
-  firstMustBe = ${firstMustBe} \n
-  secondMustBe = ${secondMustBe} \n
-  thirdMustBe = ${thirdMustBe} \n
-  fourthMustBe = ${fourthMustBe} \n
-  fifthMustBe = ${fifthMustBe} \n
-
-  lettersThatCantBeUsed = ${lettersThatCantBeUsed} \n
-  mustBeUsed = ${mustBeUsed} \n
-  
-  positionOneCantBe = ${positionOneCantBe} \n
-  positionTwoCantBe = ${positionTwoCantBe} \n
-  positionThreeCantBe = ${positionThreeCantBe} \n
-  positionFourCantBe = ${positionFourCantBe} \n
-  positionFiveCantBe = ${positionFiveCantBe}`
-  );
-  // console.log(cantBeUsedArray)
-
-
-  
-
-  
-
   let results = makeGuess();
-  console.log(results)
+  
   renderResultsToPage(results);
 
   updateActiveRow();
-  // console.log('active row ' + currentActiveRow)
-
-
+  
 });
 
 // todo: 
@@ -317,7 +273,7 @@ generateBtn.addEventListener('click',  function() {
   // ...as well as the global variables when the reset button is clicked
   
 
-// console.log(thisIsLogic);
+
 
 
 
@@ -338,5 +294,4 @@ const renderResultsToPage = arr => {
 
 
 // renderResultsToPage(wordsArray);
-// console.log(makeGuess());
-// console.log(document.querySelector('.guess').textContent)
+
