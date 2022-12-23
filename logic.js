@@ -191,7 +191,9 @@
 
     // letters that can't be position Five
     const positionFiveCantBeArray = positionFiveCantBe.split('');
-      // a) remove all words that contain verboten letters 
+      
+    
+    // a) remove all words that contain verboten letters 
     const cantIncludeArray = removeAllVerbotenLetters(wordsArray, cantBeUsedArray);
 
     // b) remove all words that don't contain all letters that NEED to be included

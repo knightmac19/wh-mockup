@@ -1,6 +1,4 @@
 
-
-
 var generateBtn = document.querySelector('.generate-btn');
 var resetBtn = document.querySelector('.reset-btn');
 
@@ -25,29 +23,7 @@ var positionThreeCantBe = '';
 var positionFourCantBe = '';
 var positionFiveCantBe = '';
 
-// // letters that CAN'T be used
-// const cantBeUsedArray = lettersThatCantBeUsed.split('');
 
-// // letters that MUST be used
-// const mustBeUsedArray = mustBeUsed.split('');
-
-// // letters that can't be position One
-// const positionOneCantBeArray = positionOneCantBe.split('');
-
-// // letters that can't be position Two
-// const positionTwoCantBeArray = positionTwoCantBe.split('');
-
-// // letters that can't be position Three
-// const positionThreeCantBeArray = positionThreeCantBe.split('');
-
-// // letters that can't be position Four
-// const positionFourCantBeArray = positionFourCantBe.split('');
-
-// // letters that can't be position Five
-// const positionFiveCantBeArray = positionFiveCantBe.split('');
-
-
-  
 
 const tiles = document.querySelectorAll('.tile');
 
@@ -89,11 +65,7 @@ tiles.forEach(tile => {
 });
 
 var keyboardKeys = document.querySelectorAll('.keyboard-key');
-// var backspaceKey = document.querySelector('.backspace');
 
-// backspaceKey.addEventListener('click', function(e) {
-//   console.log(e.target.textContent);
-// });
 
 keyboardKeys.forEach(key => {
   key.addEventListener('click', function(e) {
@@ -305,16 +277,6 @@ generateBtn.addEventListener('click',  function() {
   updateActiveRow();
   
 });
-
-// todo: 
-  // run the script to filter based on global letter variable statuses
-  // print the recommended word to the page
-  // render an element to the page for each word in the results array
-  // reset all tiles' textContent, classes, data- attributes, 
-  // ...as well as the global variables when the reset button is clicked
-  
-
-
 
 
 
