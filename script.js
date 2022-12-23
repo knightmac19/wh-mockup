@@ -324,8 +324,8 @@ generateBtn.addEventListener('click',  function() {
 
 
 const renderResultsToPage = arr => {
+  resultsSection.innerHTML = "";
 
-  
   for (var i = 0; i < arr.length; i++) {
     let span = document.createElement('span');
     span.classList.add('guess');
