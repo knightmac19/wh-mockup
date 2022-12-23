@@ -433,6 +433,6 @@ const renderResultsToPage = arr => {
   }
 }
 
-// renderResultsToPage(wordsArray)
+// renderResultsToPage(wordsArray);
 // console.log(makeGuess());
 // console.log(document.querySelector('.guess').textContent)
