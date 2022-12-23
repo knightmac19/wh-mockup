@@ -26,9 +26,9 @@ body {
 .main {
   /* display: flex;
   justify-content: center; */
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
-  /* border: solid red 2px; */
+  border: solid red 2px;
 }
 
 .tile-grid {
@@ -71,6 +71,7 @@ body {
 .generate {
   display: flex;
   justify-content: center;
+  margin-bottom: 30px;
 }
 
 .generate-btn, .reset-btn {
@@ -100,6 +101,21 @@ body {
   background-color: darkslategray;
 }
 
+.results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  border: 2px blueviolet solid;
+  gap: 7px;
+}
+
+.guess {
+  background-color: darkslategray;
+  color: whitesmoke;
+  width: auto;
+  padding: 5px 10px;
+  border-radius: 25px;
+}
 
 
 .footer {
