@@ -1,129 +1,329 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./style.css"/>
-  <title>WH Mockup</title>
-</head>
-<body>    
-  <div class="page-container">
-    <div class="content-wrap">
-      <header class="header">
-        <h1>Wordle <em><span class="emphasize">helper</span></em></h1>
-        <button class="reset-btn">reset</button>
-      </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./icons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./icons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./icons/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./site.webmanifest" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Wordle Helper</title>
+  </head>
+  <body>
+    <div class="page-container">
+      <div class="content-wrap">
+        <header class="header">
+          <h1>
+            Wordle <em><span class="emphasize">helper</span></em>
+          </h1>
+          <button class="reset-btn">reset</button>
+        </header>
 
-      <main class="main">
-        
-        <section class="tile-grid">
-          <div class="instructions">
-            <ol>
-              <li>Enter guess</li>
-              <li>Click once for <div class="small-tile right-letter-right-pos"></div> twice for <div class="small-tile right-letter-wrong-pos"></div> thrice for <div class="small-tile wrong-letter"></div></li>
-              <li>Generate</li>
-            </ol>
-          </div>
-          
-          
-          <div class="tile-row row-one">
-            <div class="tile" data-absolute="false" data-necessary="false" data-verboten="false" data-id="1"></div>
-            <div class="tile" data-absolute="false" data-necessary="false" data-verboten="false" data-id="2"></div>
-            <div class="tile" data-absolute="false" data-necessary="false" data-verboten="false" data-id="3"></div>
-            <div class="tile" data-absolute="false" data-necessary="false" data-verboten="false" data-id="4"></div>
-            <div class="tile" data-absolute="false" data-necessary="false" data-verboten="false" data-id="5"></div>
-          </div>
-          <div class="tile-row row-two">
-            <div class="tile" data-absolute="false" data-necessary="false" data-verboten="false" data-id="6"></div>
-            <div class="tile" data-absolute="false" data-necessary="false" data-verboten="false" data-id="7"></div>
-            <div class="tile" data-absolute="false" data-necessary="false" data-verboten="false" data-id="8"></div>
-            <div class="tile" data-absolute="false" data-necessary="false" data-verboten="false" data-id="9"></div>
-            <div class="tile" data-absolute="false" data-necessary="false" data-verboten="false" data-id="10"></div>
-          </div>
-          <div class="tile-row row-three">
-            <div class="tile" data-absolute="false" data-necessary="false" data-verboten="false" data-id="11"></div>
-            <div class="tile" data-absolute="false" data-necessary="false" data-verboten="false" data-id="12"></div>
-            <div class="tile" data-absolute="false" data-necessary="false" data-verboten="false" data-id="13"></div>
-            <div class="tile" data-absolute="false" data-necessary="false" data-verboten="false" data-id="14"></div>
-            <div class="tile" data-absolute="false" data-necessary="false" data-verboten="false" data-id="15"></div>
-          </div>
-          <div class="tile-row row-four">
-            <div class="tile" data-absolute="false" data-necessary="false" data-verboten="false" data-id="16"></div>
-            <div class="tile" data-absolute="false" data-necessary="false" data-verboten="false" data-id="17"></div>
-            <div class="tile" data-absolute="false" data-necessary="false" data-verboten="false" data-id="18"></div>
-            <div class="tile" data-absolute="false" data-necessary="false" data-verboten="false" data-id="19"></div>
-            <div class="tile" data-absolute="false" data-necessary="false" data-verboten="false" data-id="20"></div>
-          </div>
-          <div class="tile-row row-five">
-            <div class="tile" data-absolute="false" data-necessary="false" data-verboten="false" data-id="21"></div>
-            <div class="tile" data-absolute="false" data-necessary="false" data-verboten="false" data-id="22"></div>
-            <div class="tile" data-absolute="false" data-necessary="false" data-verboten="false" data-id="23"></div>
-            <div class="tile" data-absolute="false" data-necessary="false" data-verboten="false" data-id="24"></div>
-            <div class="tile" data-absolute="false" data-necessary="false" data-verboten="false" data-id="25"></div>
-          </div>
-          <div class="tile-row row-six">
-            <div class="tile" data-absolute="false" data-necessary="false" data-verboten="false" data-id="26"></div>
-            <div class="tile" data-absolute="false" data-necessary="false" data-verboten="false" data-id="27"></div>
-            <div class="tile" data-absolute="false" data-necessary="false" data-verboten="false" data-id="28"></div>
-            <div class="tile" data-absolute="false" data-necessary="false" data-verboten="false" data-id="29"></div>
-            <div class="tile" data-absolute="false" data-necessary="false" data-verboten="false" data-id="30"></div>
-          </div>
-        </section>  
-        <div class="generate">
-          <button class="generate-btn">generate guesses</button>
-        </div>
-        <section class="keyboard">
-          <div class="keyboard-row one">
-            <div class="keyboard-key Q">Q</div>
-            <div class="keyboard-key W">W</div>
-            <div class="keyboard-key E">E</div>
-            <div class="keyboard-key R">R</div>
-            <div class="keyboard-key T">T</div>
-            <div class="keyboard-key Y">Y</div>
-            <div class="keyboard-key U">U</div>
-            <div class="keyboard-key I">I</div>
-            <div class="keyboard-key O">O</div>
-            <div class="keyboard-key P">P</div>
-          </div>
-          <div class="keyboard-row two">
-            <div class="keyboard-key A">A</div>
-            <div class="keyboard-key S">S</div>
-            <div class="keyboard-key D">D</div>
-            <div class="keyboard-key F">F</div>
-            <div class="keyboard-key G">G</div>
-            <div class="keyboard-key H">H</div>
-            <div class="keyboard-key J">J</div>
-            <div class="keyboard-key K">K</div>
-            <div class="keyboard-key L">L</div>
-          </div>
-          <div class="keyboard-row three">
-            <div class="keyboard-key Z">Z</div>
-            <div class="keyboard-key X">X</div>
-            <div class="keyboard-key C">C</div>
-            <div class="keyboard-key V">V</div>
-            <div class="keyboard-key B">B</div>
-            <div class="keyboard-key N">N</div>
-            <div class="keyboard-key M">M</div>
-          </div>
-          <div class="keyboard-row">
-            <div class="keyboard-key special-key">DEL</div>
-          </div>
+        <main class="main">
+          <section class="tile-grid">
+            <div class="instructions">
+              <ol>
+                <li>Enter guess</li>
+                <li>
+                  Click once for
+                  <div class="small-tile right-letter-right-pos"></div>
+                  twice for
+                  <div class="small-tile right-letter-wrong-pos"></div>
+                  thrice for
+                  <div class="small-tile wrong-letter"></div>
+                </li>
+                <li>Generate</li>
+              </ol>
+            </div>
 
-        </section>
-        <section class="results"></section>
-        
-        
-      </main>
+            <div class="tile-row row-one">
+              <div
+                class="tile"
+                data-absolute="false"
+                data-necessary="false"
+                data-verboten="false"
+                data-id="1"
+              ></div>
+              <div
+                class="tile"
+                data-absolute="false"
+                data-necessary="false"
+                data-verboten="false"
+                data-id="2"
+              ></div>
+              <div
+                class="tile"
+                data-absolute="false"
+                data-necessary="false"
+                data-verboten="false"
+                data-id="3"
+              ></div>
+              <div
+                class="tile"
+                data-absolute="false"
+                data-necessary="false"
+                data-verboten="false"
+                data-id="4"
+              ></div>
+              <div
+                class="tile"
+                data-absolute="false"
+                data-necessary="false"
+                data-verboten="false"
+                data-id="5"
+              ></div>
+            </div>
+            <div class="tile-row row-two">
+              <div
+                class="tile"
+                data-absolute="false"
+                data-necessary="false"
+                data-verboten="false"
+                data-id="6"
+              ></div>
+              <div
+                class="tile"
+                data-absolute="false"
+                data-necessary="false"
+                data-verboten="false"
+                data-id="7"
+              ></div>
+              <div
+                class="tile"
+                data-absolute="false"
+                data-necessary="false"
+                data-verboten="false"
+                data-id="8"
+              ></div>
+              <div
+                class="tile"
+                data-absolute="false"
+                data-necessary="false"
+                data-verboten="false"
+                data-id="9"
+              ></div>
+              <div
+                class="tile"
+                data-absolute="false"
+                data-necessary="false"
+                data-verboten="false"
+                data-id="10"
+              ></div>
+            </div>
+            <div class="tile-row row-three">
+              <div
+                class="tile"
+                data-absolute="false"
+                data-necessary="false"
+                data-verboten="false"
+                data-id="11"
+              ></div>
+              <div
+                class="tile"
+                data-absolute="false"
+                data-necessary="false"
+                data-verboten="false"
+                data-id="12"
+              ></div>
+              <div
+                class="tile"
+                data-absolute="false"
+                data-necessary="false"
+                data-verboten="false"
+                data-id="13"
+              ></div>
+              <div
+                class="tile"
+                data-absolute="false"
+                data-necessary="false"
+                data-verboten="false"
+                data-id="14"
+              ></div>
+              <div
+                class="tile"
+                data-absolute="false"
+                data-necessary="false"
+                data-verboten="false"
+                data-id="15"
+              ></div>
+            </div>
+            <div class="tile-row row-four">
+              <div
+                class="tile"
+                data-absolute="false"
+                data-necessary="false"
+                data-verboten="false"
+                data-id="16"
+              ></div>
+              <div
+                class="tile"
+                data-absolute="false"
+                data-necessary="false"
+                data-verboten="false"
+                data-id="17"
+              ></div>
+              <div
+                class="tile"
+                data-absolute="false"
+                data-necessary="false"
+                data-verboten="false"
+                data-id="18"
+              ></div>
+              <div
+                class="tile"
+                data-absolute="false"
+                data-necessary="false"
+                data-verboten="false"
+                data-id="19"
+              ></div>
+              <div
+                class="tile"
+                data-absolute="false"
+                data-necessary="false"
+                data-verboten="false"
+                data-id="20"
+              ></div>
+            </div>
+            <div class="tile-row row-five">
+              <div
+                class="tile"
+                data-absolute="false"
+                data-necessary="false"
+                data-verboten="false"
+                data-id="21"
+              ></div>
+              <div
+                class="tile"
+                data-absolute="false"
+                data-necessary="false"
+                data-verboten="false"
+                data-id="22"
+              ></div>
+              <div
+                class="tile"
+                data-absolute="false"
+                data-necessary="false"
+                data-verboten="false"
+                data-id="23"
+              ></div>
+              <div
+                class="tile"
+                data-absolute="false"
+                data-necessary="false"
+                data-verboten="false"
+                data-id="24"
+              ></div>
+              <div
+                class="tile"
+                data-absolute="false"
+                data-necessary="false"
+                data-verboten="false"
+                data-id="25"
+              ></div>
+            </div>
+            <div class="tile-row row-six">
+              <div
+                class="tile"
+                data-absolute="false"
+                data-necessary="false"
+                data-verboten="false"
+                data-id="26"
+              ></div>
+              <div
+                class="tile"
+                data-absolute="false"
+                data-necessary="false"
+                data-verboten="false"
+                data-id="27"
+              ></div>
+              <div
+                class="tile"
+                data-absolute="false"
+                data-necessary="false"
+                data-verboten="false"
+                data-id="28"
+              ></div>
+              <div
+                class="tile"
+                data-absolute="false"
+                data-necessary="false"
+                data-verboten="false"
+                data-id="29"
+              ></div>
+              <div
+                class="tile"
+                data-absolute="false"
+                data-necessary="false"
+                data-verboten="false"
+                data-id="30"
+              ></div>
+            </div>
+          </section>
+          <div class="generate">
+            <button class="generate-btn">generate guesses</button>
+          </div>
+          <section class="keyboard">
+            <div class="keyboard-row one">
+              <div class="keyboard-key Q">Q</div>
+              <div class="keyboard-key W">W</div>
+              <div class="keyboard-key E">E</div>
+              <div class="keyboard-key R">R</div>
+              <div class="keyboard-key T">T</div>
+              <div class="keyboard-key Y">Y</div>
+              <div class="keyboard-key U">U</div>
+              <div class="keyboard-key I">I</div>
+              <div class="keyboard-key O">O</div>
+              <div class="keyboard-key P">P</div>
+            </div>
+            <div class="keyboard-row two">
+              <div class="keyboard-key A">A</div>
+              <div class="keyboard-key S">S</div>
+              <div class="keyboard-key D">D</div>
+              <div class="keyboard-key F">F</div>
+              <div class="keyboard-key G">G</div>
+              <div class="keyboard-key H">H</div>
+              <div class="keyboard-key J">J</div>
+              <div class="keyboard-key K">K</div>
+              <div class="keyboard-key L">L</div>
+            </div>
+            <div class="keyboard-row three">
+              <div class="keyboard-key Z">Z</div>
+              <div class="keyboard-key X">X</div>
+              <div class="keyboard-key C">C</div>
+              <div class="keyboard-key V">V</div>
+              <div class="keyboard-key B">B</div>
+              <div class="keyboard-key N">N</div>
+              <div class="keyboard-key M">M</div>
+            </div>
+            <div class="keyboard-row">
+              <div class="keyboard-key special-key">DEL</div>
+            </div>
+          </section>
+          <section class="results"></section>
+        </main>
+      </div>
+      <footer class="footer">&copy 2022 Patrick Dunn</footer>
     </div>
-    <footer class="footer">&copy 2022 Patrick Dunn</footer>
-  </div>
-  
-  
-  <!-- <script src="./keyboard.js"></script> -->
-  <script src="./previous.js"></script>
-  <script src="./logic.js"></script>
-  <script src="./script.js"></script>
 
-</body>
+    <!-- <script src="./keyboard.js"></script> -->
+    <script src="./previous.js"></script>
+    <script src="./logic.js"></script>
+    <script src="./script.js"></script>
+  </body>
 </html>

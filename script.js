@@ -269,37 +269,38 @@ const renderResultsToPage = (arr) => {
 };
 
 const resetAll = () => {
-  tiles.forEach((tile) => {
-    tile.setAttribute("data-absolute", "false");
-    tile.setAttribute("data-necessary", "false");
-    tile.setAttribute("data-verboten", "false");
-    tile.classList.remove(
-      "right-letter-right-pos",
-      "right-letter-wrong-pos",
-      "wrong-letter"
-    );
-    tile.textContent = "";
-  });
-  firstMustBe = "";
-  secondMustBe = "";
-  thirdMustBe = "";
-  fourthMustBe = "";
-  fifthMustBe = "";
+  window.location.reload();
+  // tiles.forEach((tile) => {
+  //   tile.setAttribute("data-absolute", "false");
+  //   tile.setAttribute("data-necessary", "false");
+  //   tile.setAttribute("data-verboten", "false");
+  //   tile.classList.remove(
+  //     "right-letter-right-pos",
+  //     "right-letter-wrong-pos",
+  //     "wrong-letter"
+  //   );
+  //   tile.textContent = "";
+  // });
+  // firstMustBe = "";
+  // secondMustBe = "";
+  // thirdMustBe = "";
+  // fourthMustBe = "";
+  // fifthMustBe = "";
 
-  lettersThatCantBeUsed = "";
-  mustBeUsed = "";
+  // lettersThatCantBeUsed = "";
+  // mustBeUsed = "";
 
-  positionOneCantBe = "";
-  positionTwoCantBe = "";
-  positionThreeCantBe = "";
-  positionFourCantBe = "";
-  positionFiveCantBe = "";
+  // positionOneCantBe = "";
+  // positionTwoCantBe = "";
+  // positionThreeCantBe = "";
+  // positionFourCantBe = "";
+  // positionFiveCantBe = "";
 
-  currentActiveCell = 1;
-  initialActiveCell = 1;
-  currentActiveRow = "row-one";
+  // currentActiveCell = 1;
+  // initialActiveCell = 1;
+  // currentActiveRow = "row-one";
 
-  resultsSection.innerHTML = "";
+  // resultsSection.innerHTML = "";
 };
 
 resetBtn.addEventListener("click", function () {
