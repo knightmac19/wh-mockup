@@ -66,8 +66,6 @@ var keyboardKeys = document.querySelectorAll(".keyboard-key");
 
 keyboardKeys.forEach((key) => {
   key.addEventListener("click", function (e) {
-    console.log(e.target.textContent);
-
     let letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     let currentTile = document.querySelector(
       `[data-id="${currentActiveCell}"]`
@@ -90,7 +88,6 @@ keyboardKeys.forEach((key) => {
           );
           currentTile.textContent = "";
         }
-        console.log(e.key);
       } else if (!letters.includes(e.key)) {
         return;
       } else {
@@ -126,7 +123,6 @@ document.addEventListener("keydown", function (e) {
         );
         currentTile.textContent = "";
       }
-      console.log(e.key);
     } else if (!letters.includes(e.key)) {
       return;
     } else {
