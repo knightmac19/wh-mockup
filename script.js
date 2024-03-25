@@ -88,10 +88,10 @@ keyboardKeys.forEach((key) => {
           );
           currentTile.textContent = "";
         }
-      } else if (!letters.includes(e.key)) {
+      } else if (!letters.includes(e.target.textContent)) {
         return;
       } else {
-        currentTile.textContent = e.key.toUpperCase();
+        currentTile.textContent = e.target.textContent;
         currentActiveCell++;
       }
     }
